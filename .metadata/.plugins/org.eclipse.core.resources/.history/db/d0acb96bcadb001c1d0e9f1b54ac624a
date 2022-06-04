@@ -1,0 +1,29 @@
+package day21;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Getmethods {
+
+	public static void main(String[] args) {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver=new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://opensource-demo.orangehrmlive.com/index.php/dashboard"); //open url on the browser
+		
+		System.out.println("Current Url " +driver.getTitle()); //returns little of the web page
+		
+		System.out.println("Current url is "+driver.getCurrentUrl());// returns current url
+		
+		//System.out.println("Page source........... "+driver.getPageSource());
+		
+		String windowId=driver.getWindowHandle();
+		System.out.println("Window id " +windowId);
+		
+		driver.close();
+		
+	}
+
+}
